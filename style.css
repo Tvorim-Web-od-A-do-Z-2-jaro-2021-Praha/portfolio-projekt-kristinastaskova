@@ -1,0 +1,26 @@
+body {
+    display: grid;
+    max-width: 1400px;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.nav {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    list-style: none;
+}
+
+.nav__link {
+    text-decoration: none;
+}
+
+.home__item--base-color {
+    color: #31a8b3;
+}
+
+.home__item--dark-color{
+    color: #212529;
+}
