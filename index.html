@@ -7,74 +7,92 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Portfolio</title>
 </head>
 
 <body>
     <header>
-        <a class="logo logo--header" href="#about"><img src="logo.png" alt="logo">
-        </a>
 
-        <nav>
-            <ul class="nav nav--first nav--sticky">
+        <nav class="sticky">
+            <a class="logo logo--header" href="#about"><img src="images/logo.png" alt="logo">
+            </a>
+            <button class="hamburger" id="hamburger">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav nav--first nav--sticky" id="nav">
                 <li class="nav__item nav__item--active"><a class="nav__link" href="#home">Úvod</a> </li>
-                <li class="nav__item"><a class="nav__link" href="#about">O mě</a> </li>
+                <li class="nav__item"><a class="nav__link" href="#about">O&nbsp;mě</a> </li>
                 <li class="nav__item"><a class="nav__link" href="#services">Služby</a> </li>
                 <li class="nav__item"><a class="nav__link" href="#portfolio">Portfolio</a> </li>
                 <li class="nav__item"><a class="nav__link" href="#reference">Reference</a> </li>
                 <li class="nav__item"><a class="nav__link" href="#contact">Kontakt</a></li>
             </ul>
         </nav>
-        
+
     </header>
-    <section class="home" id="home">
-        <div class="home__item">
-            <h1 class="home__item--dark-color"> Jmenuji se
-                <span class="home__item--base-color"> Kristína Stašková</span>
-            </h1>
-            <h2 class="home__item--base-color"> Jsem
-                <span class="home__item--dark-color"> Web developer (někdy v budoucnu snad)</span>
-            </h2>
-        </div>
-
-        <div class="home__img">
-            <div class="home__img--photo">
+    <main>
+        <section class="home" id="home">
+            <div class="home__item">
+                <h1 class="home__item--dark-color"> Jmenuji se
+                    <span class="home__item--base-color"> Kristína Stašková</span>
+                </h1>
+                <h2 class="home__item--base-color"> Jsem
+                    <span class="home__item--dark-color"> Web developer (někdy v budoucnu snad)</span>
+                </h2>
             </div>
-            <div class="home__img--cyrcle">
+
+            <div class="home__img">
+                <div class="home__img--photo">
+                    <img src="images/profil.JPG" alt="Kristína Stašková">
+                </div>
+                <div class="home__img--cyrcle">
+                </div>
+                <div class="home__img--cyrcle-2">
+                </div>
+                <div class="home__img--cyrcle-3">
+                </div>
             </div>
-            <div class="home__img--cyrcle-2">
+
+            <div class="btn home__btn">
+                <a class="home__btn--cv" href="#">
+                </a>
             </div>
-            <div class="home__img--cyrcle-3">
-            </div>
-        </div>
-
-        <div class="btn home__btn">
-            <a class="home__btn--cv" href="#">
-            </a>
-        </div>
 
 
-    </section>
+        </section>
 
-    <section class="about" id="about">
+        <section class="about" id="about">
 
-    </section>
+        </section>
 
-    <section class="services" id="services">
+        <section class="services" id="services">
 
-    </section>
+        </section>
 
-    <section class="portfolio" id="portfolio">
+        <section class="portfolio" id="portfolio">
+            <div class="portfolio__item portfolio__item--1"></div>
+            <div class="portfolio__item portfolio__item--2"></div>
+            <div class="portfolio__item portfolio__item--3"></div>
+            <div class="portfolio__item portfolio__item--4"></div>
+            <div class="portfolio__item portfolio__item--5"></div>
+            <div class="portfolio__item portfolio__item--6"></div>
 
-    </section>
+        </section>
 
-    <section class="reference" id="reference">
+        <section class="reference" id="reference">
 
-    </section>
+        </section>
 
-    <section class="contact" id="contact">
+        <section class="contact" id="contact">
 
-    </section>
+        </section>
+
+        <script src="hamburger.js"></script>
+    </main>
+    <footer>
+        Copyright &copy! 2021
+    </footer>
 
 </body>
 
