@@ -1,26 +1,119 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+:root {
+    --dark-color: #212529;
+    --base-color: #31a8b3;
+}
+
 body {
     display: grid;
+    grid-template-rows: min-content auto min-content;
+    row-gap: 2 rem;
     max-width: 1400px;
+    font-family: 'Poppins', sans-serif;
 }
 
 header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    background-color: #ffffff;
+	position: sticky;
+	top: 0;
 }
+.hamburger {
+    background-color: transparent;
+    border: 0;
+    color: var(--dark-color);
+    font-size: 20px;
+    cursor: pointer;
+}
+.hamburger:focus {
+    outline: none;
+}
+
+.nav.nav--first {
+    display: none;
+    width: 100%;
+}
+.nav.nav--first.show {
+    display: flex;
+}
+
 .nav {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     list-style: none;
+    font-weight: 500;
+    justify-items: center;
+}
+
+.nav__item {
+    place-items: center;
 }
 
 .nav__link {
     text-decoration: none;
+    color: var(--dark-color);
+}
+
+.nav__link:hover {
+    color: var(--base-color);
+}
+
+.home {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
 }
 
 .home__item--base-color {
-    color: #31a8b3;
+    color: var(--base-color);
 }
 
 .home__item--dark-color{
-    color: #212529;
+    color: var(--dark-color);
+}
+
+.home__img--photo img {
+    border-radius: 50%;
+    max-width: 50%;
+    place-content: center;
+}
+
+.btn {
+    border-radius: 1rem;
+    border: none;
+    padding: 10px 30px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    display: inline-block;
+}
+
+@media (min-width: 769px) {
+    header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: #ffffff;
+        position: sticky;
+        top: 0;
+    }
+
+    .nav {
+        grid-column-start: 2;
+        grid-template-columns: repeat(6, 1fr);
+        list-style: none;
+        font-weight: 500;
+        justify-items: center;
+    }
+    .hamburger {
+        display: none;
+    }
+    .nav.nav--first {
+        display: grid;
+    }
 }
