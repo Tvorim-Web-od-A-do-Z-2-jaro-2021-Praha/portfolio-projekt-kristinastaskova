@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;1,100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;1,100&display=swap" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Portfolio</title>
 </head>
@@ -37,13 +37,12 @@
                     <span class="home__item--base-color"> Kristína Stašková</span>
                 </h1>
                 <h2 class="home__item--base-color"> Jsem
-                    <span class="home__item--dark-color"> Web developer (někdy v budoucnu snad)</span>
+                    <span class="home__item--dark-color txt-rotate" data-period="2000" data-rotate='["Web developer.", "Web designer.", "UX designer."  ]'></span>
                 </h2>
-            </div>
-
-            <div class="btn home__btn">
-                <a class="home__btn--cv" href="#">Životopis
-                </a>
+                <div class="btn home__btn">
+                    <a class="home__btn--cv" href="#">Životopis
+                    </a>
+                </div>
             </div>
 
             <div class="home__img">
@@ -60,7 +59,106 @@
         </section>
 
         <section class="about" id="about">
-            <h2>O mě</h2>
+            <h2 class="section-name">O mě</h2>
+            <div class="about__img">
+                <img src="images/aboutMe.png" alt="O mě">
+            </div>
+            <nav class="about__left personal-info">
+                <ul class="personal-info__list">
+                    <li class="personal-info__list--1">
+                        <p>
+                            Narozeniny:
+                            <span>23. srpna 1985</span>
+                        </p>
+                    </li>
+                    <li class="personal-info__list--2">
+                        <p>Telefon:
+                            <span>+420 603 196 569</span>
+                        </p>
+                    </li>
+                    <li class="personal-info__list--3">
+                        <p>Web:
+                            <span>www.staskova.cz</span>
+                        </p>
+                    </li>
+                </ul>
+            </nav>
+
+            <nav class="about__right personal-info">
+                <ul class="personal-info__list">
+                    <li class="personal-info__list--1">
+                        <p> Věk:
+                            <span>35</span>
+                        </p>
+                    </li>
+                    <li class="personal-info__list--2">
+                        <p>Mail:
+                            <span>kristina@staskova.cz</span>
+                        </p>
+                    </li>
+                    <li class="personal-info__list--3">
+                        <p>Adresa:
+                            <span>Králův Dvůr, ČR</span>
+                        </p>
+                    </li>
+                </ul>
+            </nav>
+
+        </section>
+        <section class="skills" id="skills">
+            <h2 class="section-name">Moje dovednosti</h2>
+            <div class="skill-block">
+                <div class="skill-block__container">
+                    <div class="skill-block__skillbar--title">
+                        <span>HTML</span>
+                    </div>
+                    <div class="skill-block__skillbar">
+                        <div class="skill-block__skillbar--percent html">80%</div>
+                    </div>
+                </div>
+                <div class="skill-block__container">
+                    <div class="skill-block__skillbar--title">
+                        <span>CSS</span>
+                    </div>
+                    <div class="skill-block__skillbar">
+                        <div class="skill-block__skillbar--percent css">75%</div>
+                    </div>
+                </div>
+                <div class="skill-block__container">
+                    <div class="skill-block__skillbar--title">
+                        <span>PHP</span>
+                    </div>
+                    <div class="skill-block__skillbar">
+                        <div class="skill-block__skillbar--percent php">50%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-block">
+                <div class="skill-block__container">
+                    <div class="skill-block__skillbar--title">
+                        <span>javascript</span>
+                    </div>
+                    <div class="skill-block__skillbar">
+                        <div class="skill-block__skillbar--percent js">65%</div>
+                    </div>
+                </div>
+                <div class="skill-block__container">
+                    <div class="skill-block__skillbar--title">
+                        <span>wordpress</span>
+                    </div>
+                    <div class="skill-block__skillbar">
+                        <div class="skill-block__skillbar--percent ws">60%</div>
+                    </div>
+                </div>
+                <div class="skill-block__container">
+                    <div class="skill-block__skillbar--title">
+                        <span>UX design</span>
+                    </div>
+                    <div class="skill-block__skillbar">
+                        <div class="skill-block__skillbar--percent ux">70%</div>
+                    </div>
+                </div>
+            </div>
 
         </section>
 
@@ -87,6 +185,7 @@
         </section>
 
         <script src="hamburger.js"></script>
+        <script src="carousel.js"></script>
     </main>
     <footer>
         Copyright &copy 2021

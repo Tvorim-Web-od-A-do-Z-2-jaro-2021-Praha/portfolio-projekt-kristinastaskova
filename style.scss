@@ -1,17 +1,21 @@
 html {
-    margin: 2rem;
+    box-sizing: border-box;
     padding: 0;
+    margin: 1rem;
     height: 100%;
   }
+  *, :after, :before { box-sizing: inherit; }
+
 
     $baseColor:#31a8b3;
     $colorA:#17a2b8;
     $colorB:#FFDF52;
-    $colorC:#AF21B8;
-    $colorD:#F445FF;
+    $colorC:#ff5380;
+    $colorD:#AF21B8;
     $lightColor: #fafafa;
     $darkColor:#212529;
     $backgroundColor: #ffffff;
+    $spanTextColor: #5e5d5d;
 
   @mixin button {
       border-radius: 1rem;
@@ -21,10 +25,12 @@ html {
       background-color: $baseColor;
       display: inline-block;
       color: $lightColor;
+      text-align: center;
 
       &:hover {
         transition: all 0.3s ease;
         background-color: $colorA;
+        cursor: pointer;
       }
   }
 
@@ -33,14 +39,18 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2rem;
   }
 
-  @mixin section-tablet ($columnCount: 3, $columnGap: 1rem) {
-    column-count: $columnCount;
-    column-gap: $columnGap;
-    display: grid;
+  @mixin section-tablet {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
   }
- 
+
   
   body {
     display: grid;
@@ -57,6 +67,7 @@ html {
     background-color: $backgroundColor;
     position: sticky;
     top: 0;
+
     .hamburger {
       background-color: transparent;
       border: 0;
@@ -68,22 +79,21 @@ html {
         outline: none;
       }
     }
-    
-    nav {
       .sticky {
         display: flex;
       }
+
       .nav {
-        list-style: none;
         font-weight: 500;
         padding: 0;
+        list-style: none;
         width: 100%;
-      
-        &.nav--first {
-        display: none;
-        width: 100%;
+
+          &--first {
+          display: none;
+          width: 100%;
     
-        &.show {
+          &.show {
           @include section-mobile();
         }
       }
@@ -99,55 +109,232 @@ html {
           color: $baseColor;
         }
     }
-    }
   }
-  
   
   .home {
     @include section-mobile();
   
-    .home__item {
+    &__item {
       order: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    &__btn {
+      max-width: 50%;
     }
 
-    .home__img {
+    &__img {
       order: 1;
-    }
+        position: relative;
+        top:0; bottom:0; left:0;right:0;
+        margin:auto;
+        border-radius:50%; 
+        
+        &--circle{
+          width:30px;
+          height:30px;
+          background: $colorA;
+          border-radius:50%;
+          position:absolute;
+          top:0; bottom:0; left:0;right:0;
+          overflow:hidden;
+          margin:auto;
+          animation: circle 6s linear infinite;
+        }
 
-    .home__btn {
-      order: 3;
+          @keyframes circle{
+            0%{
+              transform:rotate(0deg)
+              translate(-165px)
+              rotate(0deg);
+            }
+           100%{
+              transform:rotate(360deg)
+              translate(-165px)
+              rotate(-360deg);
+            }
+          }
+      
+        &--circle-2 {
+          width:50px;
+          height:50px;
+          background: $colorB;
+          border-radius:50%;
+          opacity: 0.8;
+          position:absolute;
+          top:0; bottom:0; left:0;right:250px;
+          z-index: 1;
+          overflow:hidden;
+          margin:auto;
+          animation: floating 6s linear infinite;
+        }
+          @keyframes floating {
+          0%{
+            transform:translate(0px);
+          }
+          50%{
+            transform: translate(-50px);
+          }
+          100%{
+            transform:translate(0px);
+          }
+        }
+        &--circle-3 {
+          width:55px;
+          height:55px;
+          background: $colorC;
+          opacity: 0.7;
+          border-radius:50%;
+          position:absolute;
+          top:250px; bottom:0px; left:80px;right:0;
+          overflow:hidden;
+          margin:auto;
+          animation: circlereverse 22s linear infinite;
+          z-index: 11;
+          }
+  
+          @keyframes circlereverse{
+            0%{
+              transform: 
+                rotate(0deg) 
+                translate(-205px) 
+                rotate(0deg);
+            }
+            100% {
+              transform: 
+                rotate(-360deg) 
+                translate(-205px) 
+                rotate(360deg);
+            }
+          }
+      }
+
+  
+    &__item--base-color {
+    color: $baseColor;
     }
   
-    .home__item--base-color {
-    color: $baseColor;
-  }
-  
-    .home__item--dark-color {
+    &__item--dark-color {
     color: $darkColor;
-  }
+    }
   
-    .home__img--photo {
+    &__img--photo {
     display: flex;
     place-content: center;
       img {
     border-radius: 50%;
     max-width: 50%;
+        }
+    }
   }
-}
-
   a {
     text-decoration: none;
     color: $darkColor;
   }
-}
+
 
   .btn {
     @include button();
   }
   
   h1, h2 {
-    margin: 0.5rem ;
+    margin-bottom: 0.5rem ;
+    
   }
+  h2 {
+    color: $baseColor;
+  }
+
+  .personal-info__list {
+    list-style: none;
+    span {
+      color:$spanTextColor;
+    }
+  }
+
+  .about {
+    @include section-mobile();
+    &__img {
+      display: flex;
+      justify-content: center;
+      img {
+        border-radius: 50%;
+        max-width:45%;
+      }
+    }
+    .personal-info{
+      &__list {
+        padding: 0;
+      }
+    }
+
+  }
+  .skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    .section-name{
+      display: flex;
+      justify-content: center;
+    }
+
+    .skill-block {
+      
+      &__skillbar {
+        width: 100%;
+        background-color: $lightColor;
+        color: $darkColor;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+        border-radius: 0.3rem;
+        text-align: right;
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+      }
+      &__skillbar--percent {
+        padding-right: 1rem;
+        border-radius: 0.3rem;
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+        @keyframes animate {
+          100%{
+            transform: scaleX(1);
+          }
+        }
+      }
+      .html {
+        width: 80%;
+        background-color: $colorC;
+      }
+      .css {
+        width: 75%;
+        background-color: $colorB;
+      }
+      .php {
+        width: 55%;
+        background-color: $colorA;
+      }
+      .js {
+        width: 65%;
+        background-color: $colorC;
+      }
+      .ws {
+        width: 60%;
+        background-color: $colorB;
+      }
+      .ux {
+        width: 70%;
+        background-color: $colorA;
+      }
+    }
+  }
+
   //--------------TABLET---------------//
 
   @media (min-width: 769px) {
@@ -155,23 +342,72 @@ html {
       flex-direction: row;
     
   
-    .sticky {
+      .sticky {
       display: flex;
       list-style: none;
       font-weight: 500;
       width: 100%;
-    }
-  
-    .hamburger {
+      }
+
+      .hamburger {
       display: none;
-    }
-    .nav {
-      &--first {
+      }
+    
+      .nav {
+        &--first {
         display: flex;
         justify-content: space-around;
-        
+        }
       }
     }
+
+    .section-name {
+      display: flex;
+      flex: 1 0 100%;
+      justify-content: center;
     }
-  }
+
+    .home{
+      @include section-tablet();
+      flex-wrap: nowrap;
+    }
+    .about {
+      @include section-tablet();
+
+
+     &__img {
+       display: flex;
+       justify-content: center;
+       flex: 1 0 33.3%;
+       order: 3;
+        img {
+          max-width: 50%;
+      }
+    } 
+      &__left {
+        display: flex;
+        justify-content: center;
+        flex: 1 0 33.3%;
+      }
+
+      &__right {
+        display: flex;
+        justify-content: center;
+        flex: 1 0 33.3%;
+      }
+    }
+    .skills {
+      @include section-tablet();
+      .skill-block {
+        display: flex;
+        flex: 1 0 auto;
+        flex-direction: column;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    }
+
+    }
+  
+
   
