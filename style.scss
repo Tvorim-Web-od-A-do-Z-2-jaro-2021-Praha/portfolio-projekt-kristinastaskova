@@ -511,11 +511,13 @@ html {
   &__form {
     @include section-tablet();
     &--name {
-      flex: 1 0 50%;
+      flex: 1 0 49%;
+      margin-right: $padding;
     }
     &--email {
-      flex: 1 0 50%;
-    }
+      flex: 1 0 49%;
+        }
+        
     &--subject {
       flex: 1 0 100%;
     }
